@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>รู้จัก AI | AI WEBSITE</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Tahoma, sans-serif;
+    background: #f8f5ff;
+    color: #30245c;
+}
+
+/* เมนู */
+header {
+    background: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px #7041d820;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #8048dc;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #51436f;
+    padding: 11px 18px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    background: linear-gradient(90deg,#7041d8,#b14eea);
+    color: white;
+}
+
+/* แบนเนอร์ */
+.hero {
+    padding: 75px 20px;
+    text-align: center;
+    background: linear-gradient(135deg,#7041d8,#b14eea,#d58af5);
+    color: white;
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* เนื้อหา */
+.about {
+    padding: 65px 8%;
+    text-align: center;
+}
+
+.about h2 {
+    color: #7844d2;
+    font-size: 30px;
+    margin-bottom: 25px;
+}
+
+.about p {
+    max-width: 900px;
+    margin: auto;
+    line-height: 2;
+    font-size: 17px;
+    color: #665b7e;
+}
+
+/* รูปภาพ */
+.picture {
+    padding: 20px 8% 60px;
+    text-align: center;
+}
+
+.picture img {
+    width: 80%;
+    max-height: 420px;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px #7041d830;
+}
+
+/* การ์ด */
+.cards {
+    padding: 40px 8% 80px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 8px 25px #7041d815;
+    transition: 0.3s;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #b68af5;
+}
+
+.card.selected {
+    background: #f0e6ff;
+    border-color: #8048dc;
+}
+
+.icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    color: #8048dc;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #777;
+    line-height: 1.8;
+}
+
+/* จุดเด่น */
+.highlight {
+    padding: 65px 8%;
+    background: linear-gradient(135deg,#eee3ff,#fff0ff);
+    text-align: center;
+}
+
+.highlight h2 {
+    color: #7844d2;
+    margin-bottom: 30px;
+    font-size: 30px;
+}
+
+.highlight p {
+    font-size: 17px;
+    line-height: 2;
+}
+
+/* ปุ่ม */
+.buttons {
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    margin: 10px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    background: linear-gradient(90deg,#7041d8,#b14eea);
+    color: white;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 5px 20px #7041d850;
+}
+
+/* ท้ายเว็บ */
+footer {
+    background: #29204f;
+    color: white;
+    text-align: center;
+    padding: 35px;
+    line-height: 2;
+}
+
+footer h3 {
+    color: #d7b5ff;
+}
+
+/* มือถือ */
+@media(max-width:768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 27px;
+    }
+
+    .picture img {
+        width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🤖 AI WEBSITE</div>
+
+    <nav>
+        <a href="index.html" class="active">หน้าแรก</a>
+        <a href="index2.html">เกี่ยวกับ</a>
+        <a href="index3.html">บทเรียน</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>🤖 มาทำความรู้จักกับ AI กันเถอะ!</h1>
+    <p>เรียนรู้เทคโนโลยีปัญญาประดิษฐ์ที่กำลังเปลี่ยนแปลงโลกของเรา</p>
+</section>
+
+<section class="about">
+    <h2>✨ AI คืออะไร?</h2>
+    <p>
+        AI หรือ Artificial Intelligence คือ ปัญญาประดิษฐ์
+        เป็นเทคโนโลยีที่ทำให้คอมพิวเตอร์หรือเครื่องจักร
+        สามารถเลียนแบบความสามารถของมนุษย์ได้ เช่น
+        การเรียนรู้ การคิดวิเคราะห์ การจดจำ และการแก้ไขปัญหา
+        ซึ่ง AI สามารถช่วยให้การทำงานต่าง ๆ
+        สะดวกและรวดเร็วยิ่งขึ้น
+    </p>
+</section>
+
+<section class="picture">
+    <img src="images/ai-about.png" alt="Artificial Intelligence">
+</section>
+
+<section class="cards">
+
+    <div class="card">
+        <div class="icon">🧠</div>
+        <h3>การเรียนรู้</h3>
+        <p>AI สามารถเรียนรู้ข้อมูลและจดจำรูปแบบต่าง ๆ เพื่อนำไปใช้ในการทำงาน</p>
+    </div>
+
+    <div class="card">
+        <div class="icon">💡</div>
+        <h3>การคิดวิเคราะห์</h3>
+        <p>AI สามารถวิเคราะห์ข้อมูลและช่วยเสนอแนวทางในการแก้ไขปัญหา</p>
+    </div>
+
+    <div class="card">
+        <div class="icon">⚡</div>
+        <h3>ความรวดเร็ว</h3>
+        <p>AI ช่วยลดเวลาในการทำงานและเพิ่มประสิทธิภาพในการทำงาน</p>
+    </div>
+
+</section>
+
+<section class="highlight">
+    <h2>🌟 AI มีประโยชน์อย่างไร?</h2>
+    <p>
+        AI สามารถนำไปประยุกต์ใช้ได้หลากหลายด้าน
+        ไม่ว่าจะเป็นการศึกษา การแพทย์ ธุรกิจ
+        การออกแบบ และการสร้างเว็บไซต์
+        ช่วยให้มนุษย์ทำงานได้ง่ายขึ้นและประหยัดเวลามากขึ้น
+    </p>
+</section>
+
+<section class="buttons">
+    <a href="index.html" class="btn">← กลับหน้าแรก</a>
+    <a href="lesson.html" class="btn">ไปหน้าบทเรียน →</a>
+</section>
+
+<footer>
+    <h3>🤖 AI WEBSITE</h3>
+    <p>เว็บไซต์สื่อการเรียนรู้เกี่ยวกับเทคโนโลยี AI</p>
+    <p>จัดทำเพื่อการศึกษา</p>
+    <p>© 2026 AI WEBSITE</p>
+</footer>
+
+<script>
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card => {
+    card.addEventListener("click", function() {
+        cards.forEach(item => item.classList.remove("selected"));
+        this.classList.add("selected");
+    });
+});
+</script>
+
+</body>
+</html>

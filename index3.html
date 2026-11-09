@@ -1,0 +1,422 @@
+
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>บทเรียน | AI WEBSITE</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Tahoma, sans-serif;
+    background: #f8f5ff;
+    color: #30245c;
+}
+
+/* เมนู */
+header {
+    background: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px #7041d820;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #8048dc;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #51436f;
+    padding: 11px 18px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    background: linear-gradient(90deg,#7041d8,#b14eea);
+    color: white;
+}
+
+/* แบนเนอร์ */
+.hero {
+    padding: 75px 20px;
+    text-align: center;
+    color: white;
+    background: linear-gradient(120deg,#7041d8,#b14eea,#d58af5);
+}
+
+.hero h1 {
+    font-size: 38px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+/* บทเรียน */
+.lesson {
+    padding: 70px 8%;
+    text-align: center;
+}
+
+.lesson h2 {
+    font-size: 30px;
+    color: #7844d2;
+    margin-bottom: 20px;
+}
+
+.subtitle {
+    color: #776b8c;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+/* กล่องเนื้อหา */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 35px;
+    border-radius: 25px;
+    text-align: left;
+    box-shadow: 0 8px 25px #7041d815;
+    border: 2px solid transparent;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: #b68af5;
+    box-shadow: 0 12px 30px #7041d830;
+}
+
+.card.selected {
+    background: #f0e6ff;
+    border-color: #8048dc;
+}
+
+.icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #8048dc;
+    margin-bottom: 15px;
+    font-size: 21px;
+}
+
+.card p {
+    color: #70677f;
+    line-height: 1.9;
+}
+
+/* ขั้นตอน */
+.steps {
+    padding: 70px 8%;
+    background: linear-gradient(135deg,#eee3ff,#fff0ff);
+    text-align: center;
+}
+
+.steps h2 {
+    color: #7844d2;
+    font-size: 30px;
+    margin-bottom: 35px;
+}
+
+.step-box {
+    max-width: 800px;
+    margin: auto;
+    text-align: left;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: white;
+    padding: 22px;
+    margin-bottom: 18px;
+    border-radius: 18px;
+    box-shadow: 0 5px 15px #7041d815;
+    transition: 0.3s;
+}
+
+.step:hover {
+    transform: translateX(8px);
+}
+
+.number {
+    min-width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg,#7041d8,#b14eea);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.step h3 {
+    color: #8048dc;
+    margin-bottom: 8px;
+}
+
+.step p {
+    color: #70677f;
+    line-height: 1.7;
+}
+
+/* สรุป */
+.summary {
+    text-align: center;
+    padding: 70px 10%;
+}
+
+.summary h2 {
+    color: #7844d2;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.summary p {
+    line-height: 2;
+    color: #70677f;
+    font-size: 17px;
+}
+
+/* ปุ่ม */
+.buttons {
+    text-align: center;
+    padding: 30px 20px 70px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 35px;
+    margin: 10px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    background: linear-gradient(90deg,#7041d8,#b14eea);
+    color: white;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 5px 20px #7041d850;
+}
+
+/* ท้ายเว็บ */
+footer {
+    background: #29204f;
+    color: white;
+    text-align: center;
+    padding: 35px;
+    line-height: 2;
+}
+
+footer h3 {
+    color: #d7b5ff;
+}
+
+/* มือถือ */
+@media(max-width:768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 27px;
+    }
+
+    .step {
+        align-items: flex-start;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🤖 AI WEBSITE</div>
+
+    <nav>
+        <a href="index.html" class="active">หน้าแรก</a>
+        <a href="index2.html">เกี่ยวกับ</a>
+        <a href="index3.html">บทเรียน</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h1>📚 บทเรียนการประยุกต์ใช้ AI</h1>
+    <p>เรียนรู้วิธีนำเทคโนโลยี AI มาช่วยสร้างเว็บไซต์ให้สวยงามและทันสมัย</p>
+</section>
+
+<section class="lesson">
+    <h2>💻 การนำ AI มาใช้สร้างเว็บไซต์</h2>
+    <p class="subtitle">
+        AI เป็นเครื่องมือที่ช่วยให้การสร้างเว็บไซต์ง่ายขึ้น
+        แม้ไม่มีความรู้ด้านการเขียนโปรแกรมมาก่อน
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">✍️</div>
+            <h3>1. ช่วยเขียนโค้ด</h3>
+            <p>
+                AI สามารถช่วยเขียนภาษา HTML, CSS และ JavaScript
+                ทำให้ผู้ใช้งานสามารถสร้างเว็บไซต์ได้รวดเร็วยิ่งขึ้น
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎨</div>
+            <h3>2. ช่วยออกแบบเว็บไซต์</h3>
+            <p>
+                AI ช่วยแนะนำการเลือกสี รูปแบบตัวอักษร
+                การจัดวางเนื้อหา และการตกแต่งหน้าเว็บไซต์
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🖼️</div>
+            <h3>3. ช่วยสร้างรูปภาพ</h3>
+            <p>
+                AI สามารถสร้างภาพประกอบเว็บไซต์
+                ให้มีความสวยงามและเหมาะสมกับเนื้อหาที่ต้องการนำเสนอ
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🔍</div>
+            <h3>4. ช่วยตรวจสอบเว็บไซต์</h3>
+            <p>
+                AI สามารถช่วยตรวจสอบข้อผิดพลาดของโค้ด
+                และแนะนำวิธีแก้ไขเพื่อให้เว็บไซต์ทำงานได้ดีขึ้น
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<section class="steps">
+    <h2>🚀 ขั้นตอนการสร้างเว็บไซต์ด้วย AI</h2>
+
+    <div class="step-box">
+
+        <div class="step">
+            <div class="number">1</div>
+            <div>
+                <h3>กำหนดหัวข้อเว็บไซต์</h3>
+                <p>เลือกหัวข้อและวางแผนเนื้อหาที่ต้องการนำเสนอ</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="number">2</div>
+            <div>
+                <h3>ใช้ AI ช่วยสร้างโค้ด</h3>
+                <p>พิมพ์คำสั่งให้ AI ช่วยเขียนโค้ด HTML และ CSS</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="number">3</div>
+            <div>
+                <h3>ตกแต่งเว็บไซต์</h3>
+                <p>เพิ่มสีสัน รูปภาพ เมนู และจัดวางเนื้อหาให้สวยงาม</p>
+            </div>
+        </div>
+
+        <div class="step">
+            <div class="number">4</div>
+            <div>
+                <h3>ตรวจสอบและเผยแพร่</h3>
+                <p>ทดลองใช้งานเว็บไซต์ ตรวจสอบลิงก์และแก้ไขข้อผิดพลาด</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="summary">
+    <h2>💜 สรุปบทเรียน</h2>
+    <p>
+        การประยุกต์ใช้ AI ในการสร้างเว็บไซต์ช่วยให้การทำงาน
+        สะดวก รวดเร็ว และประหยัดเวลามากขึ้น
+        อีกทั้งยังช่วยให้ผู้เริ่มต้นสามารถเรียนรู้การสร้างเว็บไซต์
+        ได้ง่ายขึ้น อย่างไรก็ตาม ผู้ใช้งานควรตรวจสอบข้อมูล
+        และโค้ดที่ AI สร้างขึ้นก่อนนำไปใช้งานจริง
+    </p>
+</section>
+
+<section class="buttons">
+    <a href="index.html" class="btn">← กลับหน้าแรก</a>
+    <a href="about.html" class="btn">← เกี่ยวกับ AI</a>
+</section>
+
+<footer>
+    <h3>🤖 AI WEBSITE</h3>
+    <p>เว็บไซต์สื่อการเรียนรู้เกี่ยวกับเทคโนโลยี AI</p>
+    <p>จัดทำเพื่อการศึกษา</p>
+    <p>© 2026 AI WEBSITE</p>
+</footer>
+
+<script>
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card => {
+    card.addEventListener("click", function() {
+        cards.forEach(item => item.classList.remove("selected"));
+        this.classList.add("selected");
+    });
+});
+</script>
+
+</body>
+</html>

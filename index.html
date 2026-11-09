@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>การประยุกต์ใช้ AI สร้างเว็บไซต์</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Tahoma, sans-serif;
+    background: #f8f5ff;
+    color: #30245c;
+}
+
+/* เมนู */
+header {
+    background: white;
+    padding: 20px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 20px #7041d820;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #8048dc;
+}
+
+nav {
+    display: flex;
+    gap: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #51436f;
+    padding: 11px 18px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+/* สีเมื่อเอาเมาส์ชี้ */
+nav a:hover {
+    background: #eee3ff;
+    color: #8048dc;
+}
+
+/* สีเมื่อคลิกเลือก */
+nav a.active {
+    background: linear-gradient(90deg, #7041d8, #b14eea);
+    color: white;
+    box-shadow: 0 4px 12px #7041d850;
+}
+
+/* แบนเนอร์ */
+.banner {
+    padding: 25px 5%;
+}
+
+.banner img {
+    width: 100%;
+    max-height: 420px;
+    object-fit: cover;
+    display: block;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px #7041d830;
+}
+
+/* แนะนำ */
+.intro {
+    text-align: center;
+    padding: 70px 20px;
+    background: linear-gradient(135deg,#f0e6ff,#fff,#f8eaff);
+}
+
+.intro h1 {
+    color: #7844d2;
+    font-size: 34px;
+    margin-bottom: 25px;
+}
+
+.intro p {
+    font-size: 18px;
+    line-height: 2;
+    max-width: 850px;
+    margin: auto;
+    color: #665b7e;
+}
+
+/* บทเรียน */
+.content {
+    padding: 70px 8%;
+    text-align: center;
+}
+
+.content h2 {
+    color: #7844d2;
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    padding: 35px 25px;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px #7041d815;
+    border: 2px solid transparent;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    border-color: #b68af5;
+    box-shadow: 0 12px 30px #7041d840;
+}
+
+.card.selected {
+    border-color: #8048dc;
+    background: #f4edff;
+}
+
+.icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.card h3 {
+    color: #8048dc;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #777;
+    line-height: 1.8;
+}
+
+/* ปุ่ม */
+.start {
+    text-align: center;
+    padding: 70px 20px;
+    background: linear-gradient(120deg,#7041d8,#b14eea);
+    color: white;
+}
+
+.start h2 {
+    margin-bottom: 25px;
+    font-size: 27px;
+}
+
+.btn {
+    display: inline-block;
+    background: white;
+    color: #8048dc;
+    padding: 15px 38px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #e9d8ff;
+    transform: scale(1.08);
+}
+
+/* ท้ายเว็บ */
+footer {
+    background: #29204f;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    line-height: 2;
+}
+
+footer h3 {
+    color: #d7b5ff;
+}
+
+/* มือถือ */
+@media(max-width:768px) {
+    header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+
+    .intro h1 {
+        font-size: 25px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🤖 AI WEBSITE</div>
+
+    <nav>
+        <a href="index.html" class="active">หน้าแรก</a>
+        <a href="index2.html">เกี่ยวกับ</a>
+        <a href="index3.html">บทเรียน</a>
+    </nav>
+</header>
+
+<section class="banner">
+    <img src="images/banner.png" alt="AI Website">
+</section>
+
+<section class="intro" id="about">
+    <h1>ยินดีต้อนรับสู่เว็บไซต์ AI สร้างเว็บไซต์ ✨</h1>
+    <p>
+        เว็บไซต์นี้จัดทำขึ้นเพื่อให้ความรู้เกี่ยวกับการประยุกต์ใช้
+        ปัญญาประดิษฐ์ (AI) ในการสร้างเว็บไซต์
+        ช่วยให้การออกแบบและพัฒนาเว็บไซต์เป็นเรื่องง่าย
+        รวดเร็ว และทันสมัยมากยิ่งขึ้น
+    </p>
+</section>
+
+<section class="content" id="content">
+    <h2>📚 เนื้อหาภายในเว็บไซต์</h2>
+
+    <div class="cards">
+
+        <div class="card">
+            <div class="icon">🤖</div>
+            <h3>รู้จัก AI</h3>
+            <p>เรียนรู้ความหมายและหลักการทำงานของปัญญาประดิษฐ์</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">💻</div>
+            <h3>AI กับการสร้างเว็บไซต์</h3>
+            <p>เรียนรู้การนำ AI มาช่วยออกแบบและเขียนโค้ดเว็บไซต์</p>
+        </div>
+
+        <div class="card">
+            <div class="icon">🎨</div>
+            <h3>การออกแบบเว็บไซต์</h3>
+            <p>เรียนรู้การตกแต่งเว็บไซต์ให้สวยงามและน่าใช้งาน</p>
+        </div>
+
+    </div>
+</section>
+
+<section class="start">
+    <h2>พร้อมเรียนรู้การสร้างเว็บไซต์ด้วย AI หรือยัง? 💜</h2>
+    <a href="#content" class="btn">เริ่มต้นเรียนรู้เลย →</a>
+</section>
+
+<footer id="contact">
+    <h3>🤖 การประยุกต์ใช้ AI สร้างเว็บไซต์</h3>
+    <p>เว็บไซต์สื่อการเรียนรู้เกี่ยวกับเทคโนโลยี AI</p>
+    <p>จัดทำเพื่อการศึกษา</p>
+    <p>© 2026 AI WEBSITE</p>
+</footer>
+
+<script>
+// เปลี่ยนสีเมนูเมื่อคลิก
+const links = document.querySelectorAll("nav a");
+
+links.forEach(link => {
+    link.addEventListener("click", function() {
+        links.forEach(item => item.classList.remove("active"));
+        this.classList.add("active");
+    });
+});
+
+// เปลี่ยนสีการ์ดเมื่อคลิก
+const cards = document.querySelectorAll(".card");
+
+cards.forEach(card => {
+    card.addEventListener("click", function() {
+        cards.forEach(item => item.classList.remove("selected"));
+        this.classList.add("selected");
+    });
+});
+</script>
+
+</body>
+</html>
